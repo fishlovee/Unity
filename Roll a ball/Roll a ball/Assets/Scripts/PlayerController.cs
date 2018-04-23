@@ -40,4 +40,7 @@ public class PlayerController : MonoBehaviour
 	{
 		countText.text = "Count:" + count.ToString ();
 	}
+
+
+
 }
