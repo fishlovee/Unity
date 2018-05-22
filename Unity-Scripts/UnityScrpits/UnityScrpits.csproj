@@ -286,6 +286,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Invoker.cs" />
     <Compile Include="Assets\Scripts\Changecolor.cs" />
     <Compile Include="Assets\Scripts\checkstate.cs" />
     <Compile Include="Assets\Scripts\destroy.cs" />
