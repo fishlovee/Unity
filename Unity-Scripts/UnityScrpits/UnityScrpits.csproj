@@ -286,15 +286,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Invoker.cs" />
+    <Compile Include="Assets\Scripts\BloodControl.cs" />
     <Compile Include="Assets\Scripts\Changecolor.cs" />
     <Compile Include="Assets\Scripts\checkstate.cs" />
+    <Compile Include="Assets\Scripts\ClockAnimator.cs" />
     <Compile Include="Assets\Scripts\destroy.cs" />
     <Compile Include="Assets\Scripts\DestroyBullet.cs" />
     <Compile Include="Assets\Scripts\disablelight.cs" />
     <Compile Include="Assets\Scripts\GetAxis.cs" />
     <Compile Include="Assets\Scripts\GetOhterComponent.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Invoker.cs" />
     <Compile Include="Assets\Scripts\Jump.cs" />
     <Compile Include="Assets\Scripts\moveGo.cs" />
     <Compile Include="Assets\Scripts\MovementControls.cs" />
