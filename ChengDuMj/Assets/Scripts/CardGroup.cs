@@ -32,6 +32,12 @@ public struct ST_CARD
         byType = t;
     }
 
+    public void Set(byte p, byte t)
+    {
+        byPoint = p;
+        byType = t;
+    }
+
     public bool IsValid()
     {
         return (byPoint >= 1 && byPoint <= 9 && byType >= (byte)EN_MJ_TYPE.EN_MJ_TP_WAN && byType <= (byte)EN_MJ_TYPE.EN_MJ_TP_HUA);
@@ -75,14 +81,59 @@ public struct ST_CARD
 
 }
 
+/// <summary>
+/// 句子：吃、碰、杠
+/// </summary>
+public class CardSentence
+{
+    public ST_CARD[] m_astCard = new ST_CARD[4];
+    public int m_nCount;
+    public EN_SENTENCE_TYPE m_eType;
+    public CardSentence()
+    {
+        m_nCount = 0;
+        m_eType = EN_SENTENCE_TYPE.EN_ST_INVALID;
+    }
 
+    public bool AddCard(ST_CARD stCard)
+    {
+        if (m_nCount >= 4)
+        {
+            return false;
+        }
+
+        m_astCard[m_nCount++] = stCard;
+        return true;
+    }
+
+    public bool AddSentence(ST_CARD[] astCard,int nCount, EN_SENTENCE_TYPE e)
+    {
+        if (astCard == null || nCount <= 0 || nCount > astCard.Length || e == EN_SENTENCE_TYPE.EN_ST_INVALID)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < nCount; i++)
+        {
+            m_astCard[i] = astCard[i];
+        }
+        m_eType = e;
+        m_nCount = nCount;
+        return true;
+    }
+}
 
 public class CardGroup {
     static public byte byOneHandMax = 14;                                   // 一手牌最大张数
-    private ST_CARD[] astCards = new ST_CARD[byOneHandMax];  // 手牌
-    private byte byCardNum;                                                         // 手牌张数
+    private ST_CARD[] astCards = new ST_CARD[byOneHandMax];                 // 手牌
+    private byte byCardNum;                                                 // 手牌张数
 
     public CardGroup()
+    {
+        Init();
+    }
+
+    public void Init()
     {
         byCardNum = 0;
     }
@@ -135,6 +186,5 @@ public class CardGroup {
         }
         return false;
     }
-
-
 }
+
