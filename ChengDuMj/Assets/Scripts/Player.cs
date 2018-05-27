@@ -22,4 +22,24 @@ public class Player
         m_astSentence.Clear();
         m_astOutCard.Clear();
     }
+
+    public void AddCard(ST_CARD stCard)
+    {
+        m_clsHandCard.AddCard(stCard);
+    }
+
+    public string GetHandCardName()
+    {
+        return m_clsHandCard.GetCardsName();
+    }
+
+    public string GetOutCardName()
+    {
+        string strName = "";
+        for (int i = 0; i < m_astOutCard.Count; i++)
+        {
+            strName += m_astOutCard[i].GetName() + "|";
+        }
+        return strName;
+    }
 }

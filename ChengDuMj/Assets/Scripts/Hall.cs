@@ -10,7 +10,7 @@ public class Hall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("加载大厅");
+        PubDefs.Print("加载大厅");
         createLowBt = transform.Find("Create_low_button").GetComponent<Button>();
         createMidBt = transform.Find("Create_mid_button").GetComponent<Button>();
         createHighBt = transform.Find("Create_high_button").GetComponent<Button>();
@@ -27,17 +27,17 @@ public class Hall : MonoBehaviour {
 
     void OnLowClicked()
     {
-        Debug.Log("创建初级房");
+        PubDefs.Print("创建初级房");
         transform.Find("create_room_panel").gameObject.SetActive(true);
     }
 
     void OnMidClicked()
     {
-        Debug.Log("创建中级房");
+        PubDefs.Print("创建中级房");
     }
 
     void OnHighCilcked()
     {
-        Debug.Log("创建高级房");
+        PubDefs.Print("创建高级房");
     }
 }

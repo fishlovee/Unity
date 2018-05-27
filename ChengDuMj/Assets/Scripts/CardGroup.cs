@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// 麻将花色
 /// </summary>
-enum EN_MJ_TYPE
+enum EN_MJ_TYPE:int
 {
     EN_MJ_TP_INVALID = 0,       // 非法
     EN_MJ_TP_WAN,                   // 万
@@ -57,6 +57,12 @@ public struct ST_CARD
         return nWeight*byType + byPoint;
     }
 
+    public string GetName()
+    {
+        string[] strColor = {"--","万","条","筒","花"};
+        string[] strNo = { "--", "一", "二", "三", "四", "五", "六", "七", "八", "九" }; 
+        return string.Format("{0} {1}", strNo[byPoint],strColor[byType]);
+    }
 
     static public bool operator > (ST_CARD lhs,ST_CARD rhs)
     {
@@ -185,6 +191,16 @@ public class CardGroup {
             }
         }
         return false;
+    }
+
+    public string GetCardsName()
+    {
+        string strCards = "";
+        for (int i = 0; i < byCardNum; i++)
+        {
+            strCards += astCards[i].GetName() + "|";
+        }
+        return strCards;
     }
 }
 

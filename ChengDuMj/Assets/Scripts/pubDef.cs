@@ -1,8 +1,23 @@
 ﻿using System;
+using UnityEngine;
 
 class PubDefs
 {
     static public byte UNDEF_CHAIR = 4;  // 非法椅子号
+    static public int CARD_NO_PER_FLOWER = 9;  //  每个花色牌的张数
+    static public int EVERY_CARD_NO_BEG = 13;   // 每人初始牌张数
+
+   static  void DebugPrint(string str)
+    {
+        Debug.Log(str);
+    }
+
+    static public void Print(string str)
+    {
+#if _DEBUG
+        Debug.Log(str);
+#endif
+    }
 }
 
 /// <summary>
@@ -39,7 +54,6 @@ public enum EN_SENTENCE_TYPE
     EN_ST_PENG,
     EN_ST_GANG
 }
-
 
 
 

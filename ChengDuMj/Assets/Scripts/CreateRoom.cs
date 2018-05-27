@@ -31,7 +31,7 @@ public class CreateRoom : MonoBehaviour {
 
     void OnCreate()
     {
-        Debug.Log("创建房间，加载游戏");
+        PubDefs.Print("创建房间，加载游戏");
         Param.zpCheck = zipaiToggle.isOn;
         Param.hpCheck = huapaiToggle.isOn;
         StartCoroutine(LoadGame());
@@ -40,7 +40,7 @@ public class CreateRoom : MonoBehaviour {
     void OnCancel()
     {
         gameObject.SetActive(false);
-        Debug.Log("取消创建房间");
+        PubDefs.Print("取消创建房间");
     }
 
     IEnumerator LoadGame()

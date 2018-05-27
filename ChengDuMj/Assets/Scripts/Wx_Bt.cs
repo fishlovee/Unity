@@ -19,7 +19,7 @@ public class Wx_Bt : MonoBehaviour {
 
     private void OnClick()
     {
-        Debug.Log("WxBt OnClick");
+        PubDefs.Print("WxBt OnClick");
         StartCoroutine(Login());
         // load login 
     }
