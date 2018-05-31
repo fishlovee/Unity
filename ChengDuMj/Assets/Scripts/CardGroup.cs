@@ -3,11 +3,12 @@
 /// </summary>
 enum EN_MJ_TYPE:int
 {
-    EN_MJ_TP_INVALID = 0,       // 非法
-    EN_MJ_TP_WAN,                   // 万
+    EN_MJ_TP_FENG = 0,              // 风：东南西北中发白
     EN_MJ_TP_TIAO,                  // 条
+    EN_MJ_TP_WAN,                   // 万
     EN_MJ_TP_TONG,                  // 筒
-    EN_MJ_TP_HUA,                   // 其他牌 东南西北中发白
+    EN_MJ_TP_HUA,                   // 花：春夏秋冬菊梅兰竹
+    EN_MJ_TP_MAX
 }
 
 
@@ -15,7 +16,7 @@ enum EN_MJ_TYPE:int
 
 public struct ST_CARD
 {
-    static private int nWeight = 100;
+    static private int nWeight = 10;
     public byte byPoint;
     public byte byType;
 
@@ -40,7 +41,7 @@ public struct ST_CARD
 
     public bool IsValid()
     {
-        return (byPoint >= 1 && byPoint <= 9 && byType >= (byte)EN_MJ_TYPE.EN_MJ_TP_WAN && byType <= (byte)EN_MJ_TYPE.EN_MJ_TP_HUA);
+        return (byPoint >= 1 && byPoint <= 9 && byType >= (byte)EN_MJ_TYPE.EN_MJ_TP_FENG && byType < (byte)EN_MJ_TYPE.EN_MJ_TP_MAX);
     }
 
     public bool IsWan() { return byType == (byte)EN_MJ_TYPE.EN_MJ_TP_WAN; }
@@ -59,7 +60,7 @@ public struct ST_CARD
 
     public string GetName()
     {
-        string[] strColor = {"--","万","条","筒","花"};
+        string[] strColor = {"风", "条", "万","筒","花"};
         string[] strNo = { "--", "一", "二", "三", "四", "五", "六", "七", "八", "九" }; 
         return string.Format("{0} {1}", strNo[byPoint],strColor[byType]);
     }

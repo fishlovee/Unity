@@ -35,11 +35,12 @@ public class SingleCharacterScript : MonoBehaviour
 
     void Movement()
     {
-        float forwardMovement = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        float turnMovement = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-
-        transform.Translate(Vector3.forward * forwardMovement);
+        float turnMovement = turnSpeed * Time.deltaTime;
         transform.Rotate(Vector3.up * turnMovement);
+
+
+        //float forwardMovement = speed * Time.deltaTime;
+        //transform.Translate(Vector3.forward * forwardMovement);
     }
 
 
@@ -47,8 +48,9 @@ public class SingleCharacterScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1") && myStuff.bullets > 0)
         {
+            Debug.Log("FIRE:bullets left:" +  myStuff.bullets);
             Rigidbody bulletInstance = Instantiate(bulletPrefab, transform.position, transform.rotation) as Rigidbody;
-            bulletInstance.AddForce(transform.forward * bulletSpeed);
+            bulletInstance.AddForce(transform.forward * bulletSpeed*Time.deltaTime);
             myStuff.bullets--;
         }
     }
