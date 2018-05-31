@@ -16,9 +16,11 @@ public class GetAxis : MonoBehaviour {
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
-        float xPos = h * range;
+        float xPos = h + range;
 
-        transform.position = new Vector3(xPos, 2f, 0);
+        
+        //transform.position = new Vector3(10f, 2f, 0);
+        transform.Translate(new Vector3(xPos, 1.0f, 0));
         textOutput = "Value Returned: " + h.ToString("F2");
     }
 }

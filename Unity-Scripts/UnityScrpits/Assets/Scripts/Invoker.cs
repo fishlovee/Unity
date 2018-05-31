@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Invoker : MonoBehaviour {
     public GameObject rg;
+    private int nCount;
 	// Use this for initialization
 	void Start () {
+        nCount = 1;
         InvokeRepeating("InstantiateSphere", 2,1);
     }
 	
@@ -19,6 +21,8 @@ public class Invoker : MonoBehaviour {
 
     private void InstantiateSphere()
     {
-        Instantiate(rg, transform.position, transform.rotation);
+        GameObject go = Instantiate(rg, transform.position, transform.rotation);
+        go.transform.Translate(new Vector3(1,1,1)* 100*nCount*Time.deltaTime);
+        nCount++;
     }
 }

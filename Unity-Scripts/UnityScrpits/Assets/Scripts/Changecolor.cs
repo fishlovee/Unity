@@ -7,6 +7,7 @@ public class Changecolor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         defaultColor = GetComponent<Renderer>().material.color;
+        //defaultColor = GetComponent<Material>().color; // 没有挂载到
     }
 	
 	// Update is called once per frame
@@ -38,7 +39,7 @@ public class UpdateAndFixedUpdate : MonoBehaviour
 {
     void FixedUpdate()
     {
-        Debug.Log("FixedUpdate time :" + Time.deltaTime);
+        Debug.Log("FixedUpdate time :" + Time.fixedDeltaTime);
     }
 
 

@@ -13,7 +13,7 @@ public class UpdateAndFixedUpdateTest : MonoBehaviour
 {
     void FixedUpdate ()
     {
-        Debug.Log("FixedUpdate time :" + Time.deltaTime);
+        Debug.Log("FixedUpdate time :" + Time.fixedDeltaTime);
     }
 
 
