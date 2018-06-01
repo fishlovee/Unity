@@ -287,6 +287,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ChangeSkin.cs" />
+    <Compile Include="Assets\Scripts\Color.cs" />
+    <Compile Include="Assets\Scripts\GUIBgEdGroup.cs" />
+    <Compile Include="Assets\Scripts\GUIBox.cs" />
+    <Compile Include="Assets\Scripts\GUIBringWindowBack.cs" />
+    <Compile Include="Assets\Scripts\GUIDragWindow.cs" />
+    <Compile Include="Assets\Scripts\GUIScrollView.cs" />
+    <Compile Include="Assets\Scripts\GUISelectedGrid.cs" />
+    <Compile Include="Assets\Scripts\GUISetNextControlName.cs" />
+    <Compile Include="Assets\Scripts\RepeatButtonTest.cs" />
+    <Compile Include="Assets\Scripts\Test10.cs" />
+    <Compile Include="Assets\Scripts\Test5.cs" />
+    <Compile Include="Assets\Scripts\Test7.cs" />
+    <Compile Include="Assets\Scripts\Test9.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
